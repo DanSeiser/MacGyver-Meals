@@ -13,13 +13,10 @@ module.exports = function(app) {
 
 
 	// GET route for getting all of the posts
-	app.get("/api/recpies/:id", function(req, res) {
+	app.get("/api/recipes/:id", function(req, res) {
 		var query = {};
-		
 		query.QueryId = req.params.id;
-		
-		// 1. Add a join here to include all of the Authors to these posts
-		db.Recipe.findAll({
+				db.Recipe.findAll({
 		where: query,
 		include: [
 			{ 
