@@ -30,6 +30,14 @@ module.exports = function(app) {
 	});
 
 
+	// GET route for getting all of the posts
+	app.get("/api/recipes/", function(req, res) {
+		db.Recipe.findAll({}).then(function(recipeResults) {
+			res.json(recipeResults);
+		});
+	});
+	
+
 
 }
 
