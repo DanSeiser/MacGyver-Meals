@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="http://www.theredfork.org/wp-content/uploads/2015/07/Favicon-01.png">
+
+    <title>MacGyver Meals</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="styesheet" href="assets/css/reset.html">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="notification is-dark">
+            <p class="title">
+                MacGyver Meals
+            </p>
+            <p class="subtitle">
+                Make a Meal Worthy of
+                <bold>MacGyver</bold>
+            </p>
+            <a class="link1" href="index.html">Home</a>
+            <a class="link2" href="#">Previous Searches</a>
+            <a class="link3" href="https://github.com/DanSeiser/MacGyver-Meals" target="_blank">Github</a>
+        </div>
+
+    </div>
+    <section class="section">
+        <div class="container">
+        </div>
+    </section>
+    <div class="container">
+        <div class="field">
+            <input type="text" class="input is-info" id="first" placeholder="Chicken">
+            <br>
+            <input type="text" class="input is-info" id="second" placeholder="Broccoli">
+            <br>
+            <input type="text" class="input is-info" id="third" placeholder="Soy Suace">
+            <br>
+            <button class="button is-primary is-medium is-danger" id="submit" type="submit">MacGyver It! </button>
+        </div>
+    </div>
+
+    <div class="tile is-parent inline-block">
+        <article class="tile box">
+            <div class="content">
+                <p class="title">MacGyver Meals</p>
+                <p class="subtitle">The Recipe</p>
+                <div class="content">
+                    <p>MacGyver Meals - this could be the spot where the things and stuff go.</p>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+    <script type="text/javascript">
+        $("#submit").on("click", function(event) {
+            event.preventDefault();
+
+            first = $("#first").val().trim();
+            second = $("#second").val().trim();
+            third = $("#third").val().trim();
+
+            console.log(first + " " + second + " " + third)
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+.link1 {
+    padding-right: 10px;
+    /* margin-top: 80px; */
+}
+
+.link2 {
+    padding-right: 10px;
+    /* margin-top: 80px; */
+}
+
+.link3 {
+    /* margin-top: 80px; */
+}
+
+#first {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 40%;
+}
+
+#second {
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 40%;
+}
+
+#third {
+    margin-left: 10px;
+    width: 40%;
+}
+
+#submit {
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: Green;
+}
+
+.head {
+    margin-bottom: 50px;
+}
