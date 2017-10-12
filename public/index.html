@@ -26,7 +26,7 @@
                 <bold>MacGyver</bold>
             </p>
             <a class="link1" href="index.html">Home</a>
-            <a class="link2" href="#">Previous Searches</a>
+            <a class="link2" href="previoussearches.html">Previous Searches</a>
             <a class="link3" href="https://github.com/DanSeiser/MacGyver-Meals" target="_blank">Github</a>
         </div>
 
@@ -37,11 +37,11 @@
     </section>
     <div class="container">
         <div class="field">
-            <input type="text" class="input is-info" id="first" placeholder="Chicken">
+            <input type="text" class="input is-info" id="ingredient1" placeholder="Chicken">
             <br>
-            <input type="text" class="input is-info" id="second" placeholder="Broccoli">
+            <input type="text" class="input is-info" id="ingredient2" placeholder="Broccoli">
             <br>
-            <input type="text" class="input is-info" id="third" placeholder="Soy Suace">
+            <input type="text" class="input is-info" id="ingredient3" placeholder="Soy Suace">
             <br>
             <button class="button is-primary is-medium is-danger" id="submit" type="submit">MacGyver It! </button>
         </div>
@@ -65,9 +65,9 @@
         $("#submit").on("click", function(event) {
             event.preventDefault();
 
-            first = $("#first").val().trim();
-            second = $("#second").val().trim();
-            third = $("#third").val().trim();
+            first = $("#ingredient1").val().trim();
+            second = $("#ingredient2").val().trim();
+            third = $("#ingredient3").val().trim();
 
             console.log(first + " " + second + " " + third)
 
