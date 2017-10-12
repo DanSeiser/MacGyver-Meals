@@ -1,5 +1,5 @@
 {
-  "name": "project2",
+  "name": "macgyver-meals",
   "version": "1.0.0",
   "description": "Project 2 - MacGyver Meals",
   "main": "index.js",
@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
     "mysql2": "^1.4.2",
     "sequelize": "^4.13.5"
   }
