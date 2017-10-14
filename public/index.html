@@ -43,7 +43,7 @@
             <br>
             <input type="text" class="input is-info" id="ingredient2" placeholder="Broccoli">
             <br>
-            <input type="text" class="input is-info" id="ingredient3" placeholder="Soy Suace">
+            <input type="text" class="input is-info" id="ingredient3" placeholder="Soy Sauce">
             <br>
             <button class="button is-primary is-medium is-danger" id="submit" type="submit">MacGyver It! </button>
         </div>
@@ -85,31 +85,37 @@
                 for (var i = 0; i < response.length; i++) {
                     var imgURL = response[i].image;
                     var eyed = response[i].id;
-                    var eyeDiv = $("<p>");
-                    var imgDiv = $("<div class='image'>");
-                    var image = $("<img class='image is-128x128'>").attr("src", imgURL);
+                    var name = response[i].title;
+                    var title = response[i].title;
+                    var titleReplace = title.replace(/\s+/g, '-');
+                    var queryTitle = "https://spoonacular.com/" + titleReplace + "-" + eyed;
+                    var nameDiv = $("<p>");
+                    var imgDiv = $("<div>");
+                    nameDiv.append(name);
+                    $("#recipe-view").append(nameDiv);
+                    var link = $("<a>").attr("href", queryTitle).attr("target", "blank");
+                    var image = $("<img class='image1 is-128x128'>").attr("src", imgURL);
                     imgDiv.append(image);
-                    eyeDiv.append(eyed);
+                    $(image).wrap(link);
                     $("#recipe-view").append(imgDiv);
-                    $("#recipe-view").append(eyeDiv);
-                    // console.log(response[i].id);
-                    // console.log(response[i].image);                    
-                }
-                $.ajax({
-                    url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" + response[0].id + "/summary",
-                    method: "GET",
-                    datatype: 'json',
-                    beforeSend: function(xhr) {
-                        xhr.setRequestHeader("X-Mashape-Authorization", "WV9z9ECdtMmsh1pDfZsZxoKdu9R7p1it0ZDjsnlsAash3p31Fr");
-                    }
-                }).done(function(response) {
-                    console.log(response.summary)
-
-                });
+                } //end of for loop
             });
         });
     </script>
 
 </body>
+
+<!-- // $.ajax({
+    //     url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" + response[0].id + "/information",
+    //     method: "GET",
+    //     datatype: 'json',
+    //     beforeSend: function(xhr) {
+    //         xhr.setRequestHeader("X-Mashape-Authorization", "WV9z9ECdtMmsh1pDfZsZxoKdu9R7p1it0ZDjsnlsAash3p31Fr");
+    //     }
+    // }).done(function(response) {
+    //     console.log(response)
+
+    // }); -->
+
 
 </html>
