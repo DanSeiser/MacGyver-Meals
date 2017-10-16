@@ -12,31 +12,39 @@
     <link rel="styesheet" href="assets/css/reset.html">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:800" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
+    <!-- Header -->
     <div class="container">
-        <div class="notification is-dark">
-            <p class="title">
-                MacGyver Meals
-            </p>
-            <p class="subtitle">
-                Make a Meal Worthy of
-                <bold>MacGyver</bold>
-            </p>
-            <a class="link1" href="index.html">Home</a>
-            <a class="link2" href="previoussearches.html">Previous Searches</a>
-            <a class="link3" href="https://github.com/DanSeiser/MacGyver-Meals" target="_blank">Github</a>
-        </div>
+      <section class="hero">
+        <div class="hero-body">
+          <!-- <div class="notification is-dark is-mobile"> -->
+            <h1 class="title">
+              MacGyver Meals
+            </h1>
+            <h2 class="subtitle">
+              Make a Meal Worthy of
+              <bold>MacGyver</bold>
+            </h2>
 
-    </div>
-    <section class="section">
+
+
+            <a class="link" id="link3" href="https://github.com/DanSeiser/MacGyver-Meals" target="_blank">Github</a>
+            <a class="link" id="link2" href="previoussearches.html">Previous Searches</a>
+            <a class="link" id="link1" href="index.html">Home</a>
+          <!-- </div> -->
+        </div>
+      </section>
+    <!-- <section class="section">
         <div class="container">
             <div id="recipe-view"></div>
 
         </div>
-    </section>
+    </section> -->
+    <!-- Form -->
     <div class="container">
         <div class="field">
             <input type="text" class="input is-info" id="ingredient1" placeholder="Chicken">
@@ -49,59 +57,23 @@
         </div>
     </div>
 
+    <!--DIV for displaying recipes  -->
     <div class="tile is-parent inline-block">
         <article class="tile box">
             <div class="content">
-                <p class="title">MacGyver Meals</p>
-                <p class="subtitle">The Recipe</p>
-                <div class="recipe-return">
+                <h2 class="subtitle">Recipes</h2>
+                <nav class="level recipe-return-1" id="recipe-display">
                     <!-- <p>MacGyver Meals - this could be the spot where the things and stuff go.</p> -->
-                </div>
+                </nav>
+                <nav class="level recipe-return-2" id="recipe-display">
+                    <!-- <p>MacGyver Meals - this could be the spot where the things and stuff go.</p> -->
+                </nav>
             </div>
         </article>
     </div>
 
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-
-    <script type="text/javascript">
-        $("#submit").on("click", function(event) {
-            event.preventDefault();
-
-            first = $("#ingredient1").val().trim();
-            second = $("#ingredient2").val().trim();
-            third = $("#ingredient3").val().trim();
-            var eyed;
-            console.log(first + " " + second + " " + third)
-            var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=" + first + "%2C" + second + "%2C" + third + "&limitLicense=false&number=10&ranking=1"
-            $.ajax({
-                url: queryURL,
-                method: "GET",
-                datatype: 'json',
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader("X-Mashape-Authorization", "WV9z9ECdtMmsh1pDfZsZxoKdu9R7p1it0ZDjsnlsAash3p31Fr");
-                }
-            }).done(function(response) {
-                $(".recipe-return").text(JSON.stringify(response));
-                for (var i = 0; i < response.length; i++) {
-                    var imgURL = response[i].image;
-                    var eyed = response[i].id;
-                    var name = response[i].title;
-                    var title = response[i].title;
-                    var titleReplace = title.replace(/\s+/g, '-');
-                    var queryTitle = "https://spoonacular.com/" + titleReplace + "-" + eyed;
-                    var nameDiv = $("<p>");
-                    var imgDiv = $("<div>");
-                    nameDiv.append(name);
-                    $("#recipe-view").append(nameDiv);
-                    var link = $("<a>").attr("href", queryTitle).attr("target", "blank");
-                    var image = $("<img class='image1 is-128x128'>").attr("src", imgURL);
-                    imgDiv.append(image);
-                    $(image).wrap(link);
-                    $("#recipe-view").append(imgDiv);
-                } //end of for loop
-            });
-        });
-    </script>
+    <script src="assets/javascript/script.js"></script>
 
 </body>
 

@@ -1,14 +1,57 @@
-.link1 {
+html {
+  background: url("../images/macgyver-5.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.hero-body {
+  /*background: url("../images/chef-banner.jpg") no-repeat;
+  background-size: cover;*/
+}
+
+h1.title {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 500%;
+  color: #b22222;
+  text-align: center;
+  text-shadow:
+    -4px -4px 0 #ffd700,
+    4px -4px 0 #ffd700,
+    -4px 4px 0 #ffd700,
+    4px 4px 0 #ffd700;
+}
+
+h2.subtitle {
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 250%;
+  text-align: center;
+  color: #b22222;
+  text-shadow:
+  -1px -1px 0 #ffd700,
+  1px -1px 0 #ffd700,
+  -1px 1px 0 #ffd700,
+  1px 1px 0 #ffd700;
+  /*color: #b22222;*/
+}
+
+/*.title, .subtitle {
+  text-align: center;
+  color: #b22222;
+}*/
+
+a {
+    float: right;
+    padding-right: 10px;
+    color: white;
+    text-decoration: underline;
+    /* margin-top: 80px; */
+}
+
+#link1, #link2 {
     padding-right: 10px;
     /* margin-top: 80px; */
 }
 
-.link2 {
-    padding-right: 10px;
-    /* margin-top: 80px; */
-}
-
-.link3 {
+#link3 {
     /* margin-top: 80px; */
 }
 
@@ -40,8 +83,8 @@
 }
 
 .image1 {
-    width: 230px;
-    height: 230px;
+    width: 150px;
+    height: 150px;
     /* float: left;
     margin: 10px; */
 }
