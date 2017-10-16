@@ -1,11 +1,11 @@
 html {
-  background: url("../images/cutting-board.jpg") no-repeat center center fixed;
+  background: url("../images/macgyver-5.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
 .hero-body {
-  background: url("../images/chef-banner.jpg") no-repeat;
-  background-size: cover;
+  /*background: url("../images/chef-banner.jpg") no-repeat;
+  background-size: cover;*/
 }
 
 h1.title {

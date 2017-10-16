@@ -69,46 +69,7 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-
-    <script type="text/javascript">
-        $("#submit").on("click", function(event) {
-            event.preventDefault();
-
-            first = $("#ingredient1").val().trim();
-            second = $("#ingredient2").val().trim();
-            third = $("#ingredient3").val().trim();
-            var eyed;
-            console.log(first + " " + second + " " + third)
-            var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=" + first + "%2C" + second + "%2C" + third + "&limitLicense=false&number=10&ranking=1"
-            $.ajax({
-                url: queryURL,
-                method: "GET",
-                datatype: 'json',
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader("X-Mashape-Authorization", "WV9z9ECdtMmsh1pDfZsZxoKdu9R7p1it0ZDjsnlsAash3p31Fr");
-                }
-            }).done(function(response) {
-                // $(".recipe-return").text(JSON.stringify(response));
-                for (var i = 0; i < response.length; i++) {
-                    var imgURL = response[i].image;
-                    var eyed = response[i].id;
-                    var name = response[i].title;
-                    var title = response[i].title;
-                    var titleReplace = title.replace(/\s+/g, '-');
-                    var queryTitle = "https://spoonacular.com/" + titleReplace + "-" + eyed;
-                    var nameDiv = $("<p>");
-                    var imgDiv = $("<div>");
-                    nameDiv.append(name);
-                    $(".recipe-return").append(nameDiv);
-                    var link = $("<a>").attr("href", queryTitle).attr("target", "blank");
-                    var image = $("<img class='image1 is-128x128'>").attr("src", imgURL);
-                    imgDiv.append(image);
-                    $(image).wrap(link);
-                    $(".recipe-return").append(imgDiv);
-                } //end of for loop
-            });
-        });
-    </script>
+    <script src="assets/javascript/script.js"></script>
 
 </body>
 
