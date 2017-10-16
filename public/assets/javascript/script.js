@@ -1,6 +1,9 @@
 $("#submit").on("click", function(event) {
     event.preventDefault();
 
+    // clear the previous recipe search results images
+    $("#recipe-display").empty();
+
     //records inputs from user
     first = $("#ingredient1").val().trim();
     second = $("#ingredient2").val().trim();
@@ -44,12 +47,15 @@ $("#submit").on("click", function(event) {
             var imgTag = $("<img class='image1'>").attr("src", imgURL);
             var link = $("<a>").attr("href", queryTitle).attr("target", "blank");
             var urlImage = $(imgTag).wrap(link);
+            var imgTitle = $(titleTag).append(urlImage);
+
+            var recInfo = $(imgTitle).wrap(holderDiv).wrap(levelDiv);
 
             if (i < 5) {
-              $(".recipe-return-1").append(levelDiv).append(holderDiv).append(titleTag).append(urlImage);
+              $(".recipe-return-1").append(recInfo);
             }
             else {
-              $(".recipe-return-2").append(levelDiv).append(holderDiv).append(titleTag).append(urlImage);
+              $(".recipe-return-2").append(recInfo);
 
             }
 
