@@ -24,6 +24,7 @@ $("#submit").on("click", function(event) {
             xhr.setRequestHeader("X-Mashape-Authorization", "WV9z9ECdtMmsh1pDfZsZxoKdu9R7p1it0ZDjsnlsAash3p31Fr");
         }
     }).done(function(response) {
+
         //iterates over results
         for (var i = 0; i < response.length; i++) {
             //image array
@@ -36,17 +37,37 @@ $("#submit").on("click", function(event) {
             var titleReplace = title.replace(/\s+/g, '-');
             //creates the link to the recipe as the orginal object does not return a url
             var queryTitle = "https://spoonacular.com/" + titleReplace + "-" + eyed;
-            //creates a div for the image taken
-            var imgDiv = $("<div class = 'container' >");
-            //creates a paragraph for the title of the recipe
-            var titleDiv = $("<p class = 'titleRec' >");
-            $(".recipe-return").append(titleDiv);
+
+            var levelDiv = $("<div class='level-item has-text-centered'>");
+            var holderDiv = $("<div>");
+            var titleTag = $("<p class='heading'>").append(title);
+            var imgTag = $("<img class='image1'>").attr("src", imgURL);
             var link = $("<a>").attr("href", queryTitle).attr("target", "blank");
-            var image = $("<img class='image1 level-left image'>").attr("src", imgURL);
-            titleDiv.append(title);
-            imgDiv.append(image);
-            $(image).wrap(link);
-            $(".recipe-return").append(imgDiv);
+            var urlImage = $(imgTag).wrap(link);
+
+            if (i < 5) {
+              $(".recipe-return-1").append(levelDiv).append(holderDiv).append(titleTag).append(urlImage);
+            }
+            else {
+              $(".recipe-return-2").append(levelDiv).append(holderDiv).append(titleTag).append(urlImage);
+
+            }
+
+
+
+
+            //
+            // //creates a div for the image taken
+            // var imgDiv = $("<div class = 'container' >");
+            // //creates a paragraph for the title of the recipe
+            // var titleDiv = $("<p class = 'titleRec' >");
+            // $(".recipe-return").append(titleDiv);
+            // var link = $("<a>").attr("href", queryTitle).attr("target", "blank");
+            // var image = $("<img class='image1 level-left image'>").attr("src", imgURL);
+            // titleDiv.append(title);
+            // imgDiv.append(image);
+            // $(image).wrap(link);
+            // $(".recipe-return").append(imgDiv);
         } //end of for loop
     });
 });
