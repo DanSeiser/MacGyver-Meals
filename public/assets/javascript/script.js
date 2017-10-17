@@ -2,7 +2,8 @@ $("#submit").on("click", function(event) {
     event.preventDefault();
 
     // clear the previous recipe search results images
-    $("#recipe-display").empty();
+    $(".recipe-return-1").empty();
+    $(".recipe-return-2").empty();
 
     //records inputs from user
     first = $("#ingredient1").val().trim();
@@ -41,21 +42,19 @@ $("#submit").on("click", function(event) {
             //creates the link to the recipe as the orginal object does not return a url
             var queryTitle = "https://spoonacular.com/" + titleReplace + "-" + eyed;
 
-            var levelDiv = $("<div class='level-item has-text-centered'>");
-            var holderDiv = $("<div>");
-            var titleTag = $("<p class='heading'>").append(title);
-            var imgTag = $("<img class='image1'>").attr("src", imgURL);
-            var link = $("<a>").attr("href", queryTitle).attr("target", "blank");
-            var urlImage = $(imgTag).wrap(link);
-            var imgTitle = $(titleTag).append(urlImage);
+            // creats level div to put items in a row
+            var levelDiv = $("<div/>").addClass("level-item has-text-centered");
+            var titleTag = $("<div><p class='heading'>" + title + "</p></div>");
+            var imgTag = $("<a href=" + queryTitle + " target='blank'><img class='image1' src=" + imgURL + "></a>");
+            $(titleTag).append(imgTag);
+            $(levelDiv).append(titleTag);
 
-            var recInfo = $(imgTitle).wrap(holderDiv).wrap(levelDiv);
-
+            // Puts first five items in first row, next five in second row
             if (i < 5) {
-              $(".recipe-return-1").append(recInfo);
+              $(".recipe-return-1").append(levelDiv);
             }
             else {
-              $(".recipe-return-2").append(recInfo);
+              $(".recipe-return-2").append(levelDiv);
 
             }
 
