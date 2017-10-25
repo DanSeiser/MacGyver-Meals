@@ -11,9 +11,13 @@ module.exports = function(sequelize, DataTypes) {
         image_url : {
             type : DataTypes.STRING,
             allowNull : true
+        },
+        recipe_url : {
+          type: DataTypes.STRING,
+          allowNull : true
         }
     });
-  
+
     Recipe.associate = function(models) {
       //A single query will have up to 10 recipes
       Recipe.belongsTo(models.Query, {
@@ -24,4 +28,3 @@ module.exports = function(sequelize, DataTypes) {
     };
     return Recipe;
   };
-  

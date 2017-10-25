@@ -19,8 +19,8 @@ module.exports = function(app) {
 				db.Recipe.findAll({
 		where: query,
 		include: [
-			{ 
-			model: db.Query, 
+			{
+			model: db.Query,
 			required: false
 			}
 		]
@@ -34,10 +34,15 @@ module.exports = function(app) {
 	app.get("/api/recipes/", function(req, res) {
 		db.Recipe.findAll({}).then(function(recipeResults) {
 			res.json(recipeResults);
+
 		});
 	});
-	
+
+	app.post("/api/recipes", function(req, res) {
+		console.log(req.body.recipes);
+		db.Recipe.bulkCreate(req.body.recipes, {});
+		// db.Recipe.create()
+	});
 
 
 }
-

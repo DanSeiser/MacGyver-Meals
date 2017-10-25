@@ -16,6 +16,7 @@ $("#submit").on("click", function(event) {
     }
     //calling id outside of the query, not sure if we still need
     var eyed;
+    var recipesToSendToServer = [];
     //creates queryURL for easy application
     var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=" + first + "%2C" + second + "%2C" + third + "&limitLicense=false&number=10&ranking=1"
         //ajax call
@@ -55,13 +56,17 @@ $("#submit").on("click", function(event) {
             }
             else {
               $(".recipe-return-2").append(levelDiv);
-
             }
 
+            // create array of objects that match the structure of our model
+            recipesToSendToServer.push({
+              api_id: response[i].id,
+              title: response[i].title,
+              image_url: response[i].image,
+              recipe_url: queryTitle
+            });
 
 
-
-            //
             // //creates a div for the image taken
             // var imgDiv = $("<div class = 'container' >");
             // //creates a paragraph for the title of the recipe
@@ -74,5 +79,14 @@ $("#submit").on("click", function(event) {
             // $(image).wrap(link);
             // $(".recipe-return").append(imgDiv);
         } //end of for loop
+        console.log(response);
+        // Sends a request to our server
+        $.ajax({
+            url: "/api/recipes",
+            method: "POST",
+            datatype: 'json',
+            data: {recipes: recipesToSendToServer, foo: "foo"} // makes an object so we can capture an array of objects
+        })
+        // .done(function(response) {});
     });
 });
