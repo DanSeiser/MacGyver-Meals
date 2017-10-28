@@ -1,37 +1,30 @@
 html {
-  background: url("../images/macgyver-5.jpg") no-repeat center center fixed;
-  background-size: cover;
+    background: url("../images/macgyver-5.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
 .hero-body {
-  /*background: url("../images/chef-banner.jpg") no-repeat;
+    /*background: url("../images/chef-banner.jpg") no-repeat;
   background-size: cover;*/
 }
 
 h1.title {
-  font-family: 'Alegreya Sans SC', sans-serif;
-  font-size: 500%;
-  color: #b22222;
-  text-align: center;
-  text-shadow:
-    -4px -4px 0 #ffd700,
-    4px -4px 0 #ffd700,
-    -4px 4px 0 #ffd700,
-    4px 4px 0 #ffd700;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 500%;
+    color: #b22222;
+    text-align: center;
+    text-shadow: -4px -4px 0 #ffd700, 4px -4px 0 #ffd700, -4px 4px 0 #ffd700, 4px 4px 0 #ffd700;
 }
 
 h2.subtitle {
-  font-family: 'Alegreya Sans SC', sans-serif;
-  font-size: 250%;
-  text-align: center;
-  color: #b22222;
-  text-shadow:
-  -1px -1px 0 #ffd700,
-  1px -1px 0 #ffd700,
-  -1px 1px 0 #ffd700,
-  1px 1px 0 #ffd700;
-  /*color: #b22222;*/
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-size: 250%;
+    text-align: center;
+    color: #b22222;
+    text-shadow: -1px -1px 0 #ffd700, 1px -1px 0 #ffd700, -1px 1px 0 #ffd700, 1px 1px 0 #ffd700;
+    /*color: #b22222;*/
 }
+
 
 /*.title, .subtitle {
   text-align: center;
@@ -46,7 +39,8 @@ a {
     /* margin-top: 80px; */
 }
 
-#link1, #link2 {
+#link1,
+#link2 {
     padding-right: 10px;
     /* margin-top: 80px; */
 }
@@ -85,6 +79,27 @@ a {
 .image1 {
     width: 150px;
     height: 150px;
-    /* float: left;
-    margin: 10px; */
+    float: left;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    /* margin: 10px; */
+}
+
+.imageDiv {
+    vertical-align: middle;
+    display: inline-flex;
+}
+
+.heading {
+    display: block;
+    width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.content {
+    width: 100%;
+    height: auto;
 }
