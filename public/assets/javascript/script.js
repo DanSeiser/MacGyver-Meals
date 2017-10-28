@@ -46,24 +46,23 @@ $("#submit").on("click", function(event) {
             // creats level div to put items in a row
             var levelDiv = $("<div/>").addClass("level-item has-text-centered");
             var titleTag = $("<div><p class='heading'>" + title + "</p></div>");
-            var imgTag = $("<a href=" + queryTitle + " target='blank'><img class='image1' src=" + imgURL + "></a>");
+            var imgTag = $("<div class ='imageDiv'><a href=" + queryTitle + " target='blank'><img class='image1' src=" + imgURL + "></a></div>");
             $(titleTag).append(imgTag);
             $(levelDiv).append(titleTag);
 
             // Puts first five items in first row, next five in second row
             if (i < 5) {
-              $(".recipe-return-1").append(levelDiv);
-            }
-            else {
-              $(".recipe-return-2").append(levelDiv);
+                $(".recipe-return-1").append(levelDiv);
+            } else {
+                $(".recipe-return-2").append(levelDiv);
             }
 
             // create array of objects that match the structure of our model
             recipesToSendToServer.push({
-              api_id: response[i].id,
-              title: response[i].title,
-              image_url: response[i].image,
-              recipe_url: queryTitle
+                api_id: response[i].id, //any reason we are not using the var above - eyed
+                title: response[i].title, //any reason we are not using the var above - title
+                image_url: response[i].image, //any reason we are not using the var above - imgURL
+                recipe_url: queryTitle
             });
 
 
@@ -82,11 +81,11 @@ $("#submit").on("click", function(event) {
         console.log(response);
         // Sends a request to our server
         $.ajax({
-            url: "/api/recipes",
-            method: "POST",
-            datatype: 'json',
-            data: {recipes: recipesToSendToServer, foo: "foo"} // makes an object so we can capture an array of objects
-        })
-        // .done(function(response) {});
+                url: "/api/recipes",
+                method: "POST",
+                datatype: 'json',
+                data: { recipes: recipesToSendToServer, foo: "foo" } // makes an object so we can capture an array of objects
+            })
+            // .done(function(response) {});
     });
 });
