@@ -38,60 +38,39 @@
                 <!-- </div> -->
             </div>
         </section>
-        <<<<<<< HEAD </div>
-            <!-- <section class="section">
-=======
-        <!-- <section class="section">
->>>>>>> 07ddaec472aae45420a69e0227e474e8892cba86
-        <div class="container">
-            <div id="recipe-view"></div>
-
+    </div>
+    <!-- Form -->
+    <div class="container">
+        <div class="field">
+            <input type="text" class="input is-info" id="ingredient1" placeholder="Chicken">
+            <br>
+            <input type="text" class="input is-info" id="ingredient2" placeholder="Broccoli">
+            <br>
+            <input type="text" class="input is-info" id="ingredient3" placeholder="Soy Sauce">
+            <br>
+            <button class="button is-primary is-medium is-danger" id="submit" type="submit">MacGyver It! </button>
         </div>
-    </section> -->
-            <!-- Form -->
-            <div class="container">
-                <div class="field">
-                    <input type="text" class="input is-info" id="ingredient1" placeholder="Chicken">
-                    <br>
-                    <input type="text" class="input is-info" id="ingredient2" placeholder="Broccoli">
-                    <br>
-                    <input type="text" class="input is-info" id="ingredient3" placeholder="Soy Sauce">
-                    <br>
-                    <button class="button is-primary is-medium is-danger" id="submit" type="submit">MacGyver It! </button>
+    </div>
+
+    <!--DIV for displaying recipes  -->
+    <div class="tile is-parent inline-block">
+        <article class="tile box">
+            <div class="content">
+                <h2 class="subtitle">Recipes</h2>
+                <div class="level recipe-return-1 columns" id="recipe-display">
+                    <!-- <p>MacGyver Meals - this could be the spot where the things and stuff go.</p> -->
+                </div>
+                <div class="level recipe-return-2 columns" id="recipe-display">
+                    <!-- <p>MacGyver Meals - this could be the spot where the things and stuff go.</p> -->
                 </div>
             </div>
+        </article>
+    </div>
 
-            <!--DIV for displaying recipes  -->
-            <div class="tile is-parent inline-block">
-                <article class="tile box">
-                    <div class="content">
-                        <h2 class="subtitle">Recipes</h2>
-                        <div class="level recipe-return-1 columns" id="recipe-display">
-                            <!-- <p>MacGyver Meals - this could be the spot where the things and stuff go.</p> -->
-                        </div>
-                        <div class="level recipe-return-2 columns" id="recipe-display">
-                            <!-- <p>MacGyver Meals - this could be the spot where the things and stuff go.</p> -->
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-            <script src="assets/javascript/script.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="assets/javascript/script.js"></script>
 
 </body>
-
-<!-- // $.ajax({
-    //     url: "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" + response[0].id + "/information",
-    //     method: "GET",
-    //     datatype: 'json',
-    //     beforeSend: function(xhr) {
-    //         xhr.setRequestHeader("X-Mashape-Authorization", "WV9z9ECdtMmsh1pDfZsZxoKdu9R7p1it0ZDjsnlsAash3p31Fr");
-    //     }
-    // }).done(function(response) {
-    //     console.log(response)
-
-    // }); -->
 
 
 </html>
