@@ -13,15 +13,12 @@
         "host": "127.0.0.1",
         "dialect": "mysql"
     },
-    // "production": {
-    //     "username": "root",
-    //     "password": "admin",
-    //     "database": "macgyvermeals",
-    //     "host": "127.0.0.1",
-    //     "dialect": "mysql"
-    // }
     "production": {
-        "use_env_variable": "DATABASE_URL",
-        "dialect": "postgres"
-    }
+      "username": "root",
+      "password": "admin",
+      "database": "macgyvermeals",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+     }
+
 }
