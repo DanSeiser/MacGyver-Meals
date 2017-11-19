@@ -1,9 +1,9 @@
 {
     "development": {
-        "username": "root",
-        "password": "admin",
-        "database": "macgyvermeals",
-        "host": "127.0.0.1",
+        "username": "b050b7744d7d01",
+        "password": "565dae5d",
+        "database": "heroku_0c8f5db30ef1d95",
+        "host": "us-cdbr-iron-east-05.cleardb.net",
         "dialect": "mysql"
     },
     "test": {
